@@ -72,8 +72,10 @@ const Conception = () => {
   ];
 
   return (
+
     <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-secondary/20">
       <div className="relative">
+
         <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-transparent">
           <div className="max-w-7xl mx-auto px-6 py-16">
             <div className="text-center max-w-3xl mx-auto">
@@ -92,7 +94,8 @@ const Conception = () => {
           </div>
         </div>
 
-        <div className="max-w-6xl mx-auto px-6 pb-16 -mt-8">
+        <div className="max-w-6xl mx-auto px-6 pb-16 mt-12">
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
               <Card className="border-0 shadow-xl bg-card/80 backdrop-blur-sm">
@@ -242,7 +245,7 @@ const Conception = () => {
             
             {/* Colonne droite */}
             <div className="space-y-6">
-              <Card className="border-0 shadow-xl bg-card/80 backdrop-blur-sm sticky top-8">
+              <Card className="border-0 shadow-xl bg-card/80 backdrop-blur-sm top-8">
                 <CardHeader>
                   <CardTitle className="flex items-center text-xl">
                     <div className="p-2 bg-secondary/20 rounded-lg mr-3">
