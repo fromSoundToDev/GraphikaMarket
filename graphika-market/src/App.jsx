@@ -15,6 +15,7 @@ import OrderDesign from "./pages/OrderDesign";
 import OrderPrint from "./pages/OrderPrint";
 import Conception from "./pages/Conception";
 import Impressions from "./pages/Impressions";
+import Supports from "./pages/Supports";
 import Orders from "./pages/Orders";
 import Profile from "./pages/Profile";
 import GraphisteDashboard from "./pages/GraphisteDashboard";
@@ -49,6 +50,7 @@ export const App = () => (
             <Route path="/become-graphiste" element={<Layout><BecomeGraphiste /></Layout>} />
             <Route path="/conception" element={<Layout><Conception /></Layout>} />
             <Route path="/impressions" element={<Layout><Impressions /></Layout>} />
+            <Route path="/supports" element={<Layout><Supports /></Layout>} />
             <Route path="/about" element={<Layout><About /></Layout>} />
             <Route path="/help" element={<Layout><Help /></Layout>} />
             <Route path="/terms" element={<Layout><Terms /></Layout>} />

@@ -293,7 +293,7 @@ function Layout({ children }) {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/impressions" className="hover:text-white">
+                  <Link to="/supports" className="hover:text-white">
                     Supports variés
                   </Link>
                 </li>
