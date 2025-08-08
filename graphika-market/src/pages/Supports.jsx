@@ -140,7 +140,7 @@ const Supports = () => {
 
       <div className="max-w-7xl mx-auto px-6 pb-16 -mt-8">
         {/* Supports de Conception */}
-        <section className="mb-16">
+        <section className="mb-16 mt-12">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-foreground mb-4">
               Supports de <span className="text-primary">Conception</span>
