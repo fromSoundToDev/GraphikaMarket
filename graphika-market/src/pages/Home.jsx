@@ -167,7 +167,7 @@ export const Home = () => {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <Link to="/conception">
+              <Link to="/supports">
                 <Button size="lg" variant="outline" className="border-white text-black hover:bg-white hover:text-purple-600">
                   Découvrir nos services
                 </Button>
