@@ -12,10 +12,12 @@ import Dashboard from "./pages/Dashboard";
 import Contact from "./pages/Contact";
 import BecomeGraphiste from "./pages/BecomeGraphiste";
 import OrderDesign from "./pages/OrderDesign";
+import OrderTracking from "./pages/OrderTracking";
 import OrderPrint from "./pages/OrderPrint";
 import Conception from "./pages/Conception";
-import Impressions from "./pages/Impressions";
+import Impression from "./pages/Impressions";
 import Supports from "./pages/Supports";
+import Payment from "./pages/Payment";
 import Orders from "./pages/Orders";
 import Profile from "./pages/Profile";
 import GraphisteDashboard from "./pages/GraphisteDashboard";
@@ -32,6 +34,12 @@ import Help from "./pages/Help";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
+import Payouts from "./pages/Payouts";
+import PrintOrder from "./pages/PrintOrder";
+import AllDesigns from "./pages/AllDesigns";
+import ApplyGraphist from "./pages/ApplyGraphist";
+import DownloadPage from "./pages/Download";
+import UploadPage from "./pages/Upload";
 
 const queryClient = new QueryClient();
 
@@ -49,16 +57,28 @@ export const App = () => (
             <Route path="/contact" element={<Layout><Contact /></Layout>} />
             <Route path="/become-graphiste" element={<Layout><BecomeGraphiste /></Layout>} />
             <Route path="/conception" element={<Layout><Conception /></Layout>} />
-            <Route path="/impressions" element={<Layout><Impressions /></Layout>} />
+            <Route path="/all-design" element={<Layout><AllDesigns /></Layout>} />
+            <Route path="/impressions" element={<Layout><Impression /></Layout>} />
             <Route path="/supports" element={<Layout><Supports /></Layout>} />
             <Route path="/about" element={<Layout><About /></Layout>} />
             <Route path="/help" element={<Layout><Help /></Layout>} />
             <Route path="/terms" element={<Layout><Terms /></Layout>} />
             <Route path="/privacy" element={<Layout><Privacy /></Layout>} />
-            
+            <Route path="/order-design" element={<Layout><OrderDesign /></Layout>} />
+
+            {/* Process flow pages */}
+            <Route path="/order-tracking" element={<Layout><OrderTracking /></Layout>} />
+            <Route path="/print-order" element={<Layout><PrintOrder /></Layout>} />
+            <Route path="/payment" element={<Layout><Payment /></Layout>} />
+            <Route path="/payouts" element={<Layout><Payouts /></Layout>} />
+            <Route path="/order-tracking" element={<Layout><OrderTracking /></Layout>} />
+            <Route path="/download" element={<Layout><DownloadPage /></Layout>} />
+            <Route path="/upload" element={<Layout><UploadPage /></Layout>} />
+            <Route path="/apply-graphist" element={<Layout><ApplyGraphist /></Layout>} />
+            {/* <Route path="/analytics" element={<Analytics />} /> */}
+
             {/* User Routes with DashboardLayout */}
             <Route path="/dashboard" element={<DashboardLayout><Dashboard /></DashboardLayout>} />
-            <Route path="/order-design" element={<DashboardLayout><OrderDesign /></DashboardLayout>} />
             <Route path="/order-print" element={<DashboardLayout><OrderPrint /></DashboardLayout>} />
             <Route path="/orders" element={<DashboardLayout><Orders /></DashboardLayout>} />
             <Route path="/profile" element={<DashboardLayout><Profile /></DashboardLayout>} />

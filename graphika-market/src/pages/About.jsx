@@ -1,140 +1,204 @@
-import React from 'react';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '../components/ui/card';
-import { Palette, Users, Award, Target } from 'lucide-react';
+import { Card, CardContent } from "../components/ui/card";
+import { Badge } from "../components/ui/badge";
+import { Button } from "../components/ui/button";
+import { Users, Target, Award, Heart, Zap, Shield } from "lucide-react";
 
-export const About = () => {
+
+const About = () => {
+  const stats = [
+    { label: "Créateurs actifs", value: "500+", icon: Users },
+    { label: "Designs vendus", value: "50K+", icon: Target },
+    { label: "Clients satisfaits", value: "10K+", icon: Award },
+    { label: "Pays couverts", value: "25+", icon: Heart }
+  ];
+
   const values = [
     {
-      icon: Palette,
-      title: 'Créativité',
-      description: "Nous encourageons l'innovation et la créativité dans chaque projet.",
+      icon: Zap,
+      title: "Innovation",
+      description: "Nous encourageons la créativité et l'innovation dans chaque design."
+    },
+    {
+      icon: Heart,
+      title: "Qualité",
+      description: "Chaque création est vérifiée et sélectionnée pour sa qualité exceptionnelle."
+    },
+    {
+      icon: Shield,
+      title: "Confiance",
+      description: "Sécurité des transactions et protection des droits d'auteur garanties."
     },
     {
       icon: Users,
-      title: 'Collaboration',
-      description: 'Une plateforme qui unit clients et graphistes pour des résultats exceptionnels.',
+      title: "Communauté",
+      description: "Une communauté bienveillante qui favorise l'entraide entre créateurs."
+    }
+  ];
+
+  const team = [
+    {
+      name: "Marie Dupont",
+      role: "CEO & Fondatrice",
+      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop",
+      bio: "Ex-directrice artistique chez Publicis, passionnée par l'art numérique."
     },
     {
-      icon: Award,
-      title: 'Qualité',
-      description: 'Nous garantissons un service de haute qualité à chaque étape.',
+      name: "Thomas Laurent",
+      role: "CTO",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop",
+      bio: "Développeur senior avec 10 ans d'expérience dans les plateformes e-commerce."
     },
     {
-      icon: Target,
-      title: 'Efficacité',
-      description: 'Des processus optimisés pour des délais respectés et des clients satisfaits.',
+      name: "Sarah Chen",
+      role: "Directrice Marketing",
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop",
+      bio: "Experte en marketing digital et stratégie de marque pour startups créatives."
     },
+    {
+      name: "Lucas Martin",
+      role: "Responsable Communauté",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop",
+      bio: "Designer graphique devenu community manager, pont entre créateurs et clients."
+    }
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            À propos de Graphika
+    <div className="min-h-screen">
+
+      {/* Hero Section */}
+      <section className="py-20 px-4 text-center">
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            Notre Histoire
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            La plateforme qui révolutionne la création graphique en connectant
-            les talents créatifs avec les entreprises qui en ont besoin.
+          <p className="text-xl md:text-2xl text-gray-600 mb-8">
+            Graphika est né de la passion pour la création graphique et de la volonté de connecter les talents avec ceux qui en ont besoin.
           </p>
         </div>
+      </section>
 
-        {/* Mission */}
-        <div className="mb-16">
-          <Card>
-            <CardHeader className="text-center">
-              <CardTitle className="text-3xl">Notre Mission</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center">
-              <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-                Graphika a été créée pour démocratiser l'accès au design graphique de qualité.
-                Nous croyons que chaque entreprise, quelle que soit sa taille, mérite une identité
-                visuelle forte et professionnelle. Notre plateforme connecte les meilleurs graphistes
-                freelance avec des clients qui cherchent à donner vie à leurs idées.
+      {/* Mission Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold mb-6 text-gray-800">Notre Mission</h2>
+              <p className="text-lg text-gray-600 mb-6">
+                Démocratiser l'accès au design graphique de qualité en créant une plateforme qui met en relation les créateurs talentueux avec les entrepreneurs, PME et particuliers qui ont besoin de visuels exceptionnels.
               </p>
-            </CardContent>
-          </Card>
+              <p className="text-lg text-gray-600 mb-8">
+                Nous croyons que chaque projet mérite un design unique et professionnel, quel que soit le budget. C'est pourquoi nous avons créé un écosystème où la créativité rencontre l'accessibilité.
+              </p>
+              <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
+                Rejoindre la communauté
+              </Button>
+            </div>
+            <div className="relative">
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop"
+                alt="Équipe créative"
+                className="rounded-2xl shadow-2xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-2xl"></div>
+            </div>
+          </div>
         </div>
+      </section>
 
-        {/* Values */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
+      {/* Stats Section */}
+      <section className="py-16 bg-gradient-to-r from-purple-600 to-blue-600">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-white">
+            DesignMarket en Chiffres
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => {
+              const IconComponent = stat.icon;
+              return (
+                <div key={index} className="text-center text-white">
+                  <IconComponent className="h-12 w-12 mx-auto mb-4 text-purple-200" />
+                  <div className="text-4xl font-bold mb-2">{stat.value}</div>
+                  <div className="text-purple-200">{stat.label}</div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
             Nos Valeurs
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => {
-              const Icon = value.icon;
+              const IconComponent = value.icon;
               return (
-                <Card key={index} className="text-center">
-                  <CardContent className="p-6">
-                    <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Icon className="w-8 h-8 text-purple-600" />
+                <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow bg-white/80 backdrop-blur-sm border-0">
+                  <CardContent className="p-0">
+                    <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full flex items-center justify-center">
+                      <IconComponent className="h-8 w-8 text-purple-600" />
                     </div>
-                    <h3 className="font-semibold text-lg mb-2">{value.title}</h3>
-                    <p className="text-gray-600 text-sm">{value.description}</p>
+                    <h3 className="text-xl font-bold mb-3 text-gray-800">{value.title}</h3>
+                    <p className="text-gray-600">{value.description}</p>
                   </CardContent>
                 </Card>
               );
             })}
           </div>
         </div>
+      </section>
 
-        {/* Story */}
-        <div className="mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Notre Histoire
-              </h2>
-              <div className="space-y-4 text-gray-600">
-                <p>
-                  Fondée en 2017, Graphika est née de la frustration de voir trop d'entreprises
-                  lutter pour trouver des graphistes talentueux et abordables.
-                </p>
-                <p>
-                  Nos fondateurs, issus du monde du design et de la technologie, ont imaginé
-                  une plateforme qui simplifierait ce processus tout en garantissant la qualité
-                  et la satisfaction de tous les acteurs.
-                </p>
-                <p>
-                  Aujourd'hui, Graphika compte plus de 500 graphistes vérifiés et a livré
-                  plus de 10 000 projets créatifs à travers la France.
-                </p>
-              </div>
-            </div>
-            <div className="bg-gradient-to-br from-purple-100 to-blue-100 rounded-lg p-8">
-              <div className="text-center">
-                <div className="grid grid-cols-2 gap-6">
-                  <div>
-                    <p className="text-3xl font-bold text-purple-600">500+</p>
-                    <p className="text-sm text-gray-600">Graphistes</p>
-                  </div>
-                  <div>
-                    <p className="text-3xl font-bold text-purple-600">10k+</p>
-                    <p className="text-sm text-gray-600">Projets livrés</p>
-                  </div>
-                  <div>
-                    <p className="text-3xl font-bold text-purple-600">98%</p>
-                    <p className="text-sm text-gray-600">Satisfaction client</p>
-                  </div>
-                  <div>
-                    <p className="text-3xl font-bold text-purple-600">24h</p>
-                    <p className="text-sm text-gray-600">Délai moyen</p>
-                  </div>
+      {/* Team Section */}
+      <section className="py-16 px-4 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+            Notre Équipe
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {team.map((member, index) => (
+              <Card key={index} className="text-center overflow-hidden hover:shadow-lg transition-shadow bg-white/80 backdrop-blur-sm border-0">
+                <div className="relative">
+                  <img
+                    src={member.avatar}
+                    alt={member.name}
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 </div>
-              </div>
-            </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-1 text-gray-800">{member.name}</h3>
+                  <Badge variant="secondary" className="mb-3">{member.role}</Badge>
+                  <p className="text-gray-600 text-sm">{member.bio}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
+      </section>
 
-      </div>
+      {/* CTA Section */}
+      <section className="py-20 px-4 text-center bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            Prêt à Rejoindre l'Aventure ?
+          </h2>
+          <p className="text-xl text-purple-100 mb-8">
+            Que vous soyez créateur ou client, DesignMarket vous attend pour donner vie à vos projets les plus ambitieux.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-white text-purple-600 hover:bg-purple-50">
+              Commencer à vendre
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-600">
+              Explorer les designs
+            </Button>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };

@@ -26,7 +26,7 @@ export const Home = () => {
     {
       icon: Zap,
       title: 'Livraison Express',
-      description: 'Livraison sous 24h à Lomé et 48h en province',
+      description: 'Livraison sous 24h',
     },
     {
       icon: Shield,
@@ -40,50 +40,51 @@ export const Home = () => {
     },
   ];
 
-  const services = [
-    {
-      title: 'Logo & Identité Visuelle',
-      description: 'Création de logos, charte graphique, cartes de visite',
-      price: 'À partir de 75.000 CFA',
-      image: 'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=400&h=200&fit=crop',
-      features: ['3 propositions de design', 'Révisions illimitées', 'Fichiers HD + vectoriels']
-    },
-    {
-      title: 'Supports Print',
-      description: 'Flyers, affiches, brochures, catalogues',
-      price: 'À partir de 15.000 CFA',
-      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=200&fit=crop',
-      features: ['Papier premium', 'Finition brillante/mate', 'Formats personnalisés']
-    },
-    {
-      title: 'Packaging & Emballage',
-      description: "Design d'emballages, étiquettes, packaging produits",
-      price: 'À partir de 125.000 CFA',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop',
-      features: ['Design 3D', 'Prototypage inclus', 'Conseils matériaux']
-    },
-    {
-      title: 'Signalétique',
-      description: 'Panneaux, enseignes, bâches publicitaires',
-      price: 'À partir de 45.000 CFA',
-      image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=200&fit=crop',
-      features: ['Installation comprise', 'Matériaux résistants', 'Design personnalisé']
-    },
-    {
-      title: 'Textile Personnalisé',
-      description: 'T-shirts, polos, casquettes, uniformes',
-      price: 'À partir de 8.500 CFA',
-      image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=200&fit=crop',
-      features: ['Broderie & sérigraphie', 'Coton premium', 'Tailles variées']
-    },
-    {
-      title: 'Supports Digitaux',
-      description: 'Bannières web, posts réseaux sociaux, newsletters',
-      price: 'À partir de 25.000 CFA',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop',
-      features: ['Formats optimisés', 'Animations incluses', 'Pack 10 visuels']
-    },
-  ];
+const services = [
+  {
+    title: 'Logo & Identité Visuelle',
+    description: 'Création de logos, charte graphique, cartes de visite',
+    price: 'À partir de 123 USD', // 75000 / 610 ≈ 123
+    image: 'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=400&h=200&fit=crop',
+    features: ['3 propositions de design', 'Révisions illimitées', 'Fichiers HD + vectoriels']
+  },
+  {
+    title: 'Supports Print',
+    description: 'Flyers, affiches, brochures, catalogues',
+    price: 'À partir de 25 USD',
+    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=200&fit=crop',
+    features: ['Papier premium', 'Finition brillante/mate', 'Formats personnalisés']
+  },
+  {
+    title: 'Packaging & Emballage',
+    description: "Design d'emballages, étiquettes, packaging produits",
+    price: 'À partir de 205 USD', 
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop',
+    features: ['Design 3D', 'Prototypage inclus', 'Conseils matériaux']
+  },
+  {
+    title: 'Signalétique',
+    description: 'Panneaux, enseignes, bâches publicitaires',
+    price: 'À partir de 74 USD', 
+    image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=200&fit=crop',
+    features: ['Installation comprise', 'Matériaux résistants', 'Design personnalisé']
+  },
+  {
+    title: 'Textile Personnalisé',
+    description: 'T-shirts, polos, casquettes, uniformes',
+    price: 'À partir de 14 USD', 
+    image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=200&fit=crop',
+    features: ['Broderie & sérigraphie', 'Coton premium', 'Tailles variées']
+  },
+  {
+    title: 'Supports Digitaux',
+    description: 'Bannières web, posts réseaux sociaux, newsletters',
+    price: 'À partir de 41 USD',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop',
+    features: ['Formats optimisés', 'Animations incluses', 'Pack 10 visuels']
+  },
+];
+
 
   const testimonials = [
     {
@@ -91,7 +92,7 @@ export const Home = () => {
       role: 'Directrice, Bella Fashion',
       content: 'Graphika a transformé notre image de marque ! Nos ventes ont augmenté de 40% depuis le nouveau logo.',
       rating: 5,
-      location: 'Lomé'
+      location: 'Cotonou'
     },
     {
       name: 'Koffi Adjei',
@@ -105,14 +106,14 @@ export const Home = () => {
       role: 'Responsable Communication, NGO Hope',
       content: 'Équipe très professionnelle et créative. Ils ont parfaitement saisi nos besoins pour notre campagne.',
       rating: 5,
-      location: 'Atakpamé'
+      location: 'Cocody'
     },
     {
       name: 'Edem Tettey',
       role: 'Entrepreneur, TechStart',
       content: 'Prix compétitifs et qualité au rendez-vous. Je recommande vivement pour tous vos projets graphiques.',
       rating: 5,
-      location: 'Sokodé'
+      location: 'Douala'
     },
   ];
 
@@ -127,12 +128,12 @@ export const Home = () => {
     {
       icon: Award,
       title: 'Expertise Locale',
-      description: 'Nous connaissons le marché togolais et adaptons nos créations à votre clientèle'
+      description: 'Nous connaissons le marché africain et adaptons nos créations à votre clientèle'
     },
     {
       icon: Truck,
       title: 'Livraison Partout',
-      description: 'Livraison dans toutes les régions du Togo avec suivi en temps réel'
+      description: 'Livraison dans toutes les régions de l\'Afrique de l\'ouest avec suivi en temps réel'
     },
     {
       icon: CheckCircle,
@@ -146,22 +147,22 @@ export const Home = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center">
-            <Badge className="mb-4 bg-white/20 text-white">
-               Plateforme #1 au Togo
+          <div className="text-center mb-4">
+            <Badge className="bg-yellow-100 text-purple-900 text-sm font-semibold px-4 py-2">
+              🎉 1ère Plateforme graphique d'Afrique
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Créez, Imprimez,
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">
-                Réussissez au Togo
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">
-              La première plateforme togolaise de création graphique et d'impression professionnelle. 
-              Des prix adaptés au marché local, une qualité internationale.
-            </p>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            Votre Vision,
+            <span className=" text-yellow-500">
+              Notre Création
+            </span>
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 text-purple-100 max-w-4xl mx-auto leading-relaxed">
+            Conception graphique professionnelle et impression de qualité. 
+            Des designs uniques qui parlent à votre audience.
+          </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/register">
+              <Link to="/all-design">
                 <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100">
                   Commencer maintenant
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -195,12 +196,9 @@ export const Home = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Pourquoi choisir Graphika ?
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
+              La plateforme qui comprend les besoins des entreprises 
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              La plateforme qui comprend les besoins des entreprises togolaises
-            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
@@ -225,10 +223,10 @@ export const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Nos Services
+              Nos Conceptions & Impressions
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Des solutions complètes adaptées au marché togolais
+              Des solutions complètes adaptées au marché africain
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -249,7 +247,7 @@ export const Home = () => {
                   <div className="space-y-3">
                     <div className="flex justify-between items-center">
                       <span className="text-2xl font-bold text-purple-600">{service.price}</span>
-                      <Link to="/register">
+                      <Link to="/impressions">
                         <Button size="sm">Commander</Button>
                       </Link>
                     </div>
@@ -274,7 +272,7 @@ export const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              L'avantage Graphika au Togo
+              L'avantage Graphika en Afrique
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -296,7 +294,7 @@ export const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Ils nous font confiance à travers le Togo
+              Ils nous font confiance à travers le Continent
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Découvrez les témoignages de nos clients satisfaits
@@ -332,7 +330,7 @@ export const Home = () => {
       <section className="py-20 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Prêt à créer votre projet au Togo ?
+            Prêt à créer votre projet chez Nous ?
           </h2>
           <p className="text-xl mb-8 text-gray-200">
             Rejoignez plus de 2500 clients satisfaits et donnez vie à vos idées avec Graphika

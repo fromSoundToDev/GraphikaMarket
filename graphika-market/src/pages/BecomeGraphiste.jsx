@@ -279,14 +279,14 @@ export const BecomeGraphiste = () => {
 
       <div className="space-y-2">
         <Label>Portfolio (optionnel)</Label>
-        <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
+        <input type='file' className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
           <Upload className="w-12 h-12 text-gray-400 mx-auto mb-4" />
           <p className="text-gray-600 mb-2">Téléchargez vos meilleures créations</p>
           <p className="text-sm text-gray-500">JPG, PNG, PDF - Max 10MB par fichier</p>
           <Button variant="outline" className="mt-4">
             Sélectionner des fichiers
           </Button>
-        </div>
+        </input>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -371,7 +371,7 @@ export const BecomeGraphiste = () => {
   };
 
 return (
-  <div className="min-h-screen bg-gray-50">
+  <div className="min-h-screen">
     {/* Hero Section */}
     <section className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

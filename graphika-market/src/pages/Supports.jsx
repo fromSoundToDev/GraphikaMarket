@@ -104,7 +104,7 @@ const Supports = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-secondary/20">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-transparent">
         <div className="max-w-7xl mx-auto px-6 py-16">

@@ -65,13 +65,13 @@ export const Contact = () => {
     {
       icon: Phone,
       title: 'Téléphone',
-      content: '+228 70 02 55 56',
-      link: '+228 70025556',
+      content: '+xx xxx xx xx',
+      link: '+xx xxxxxx',
     },
     {
       icon: MapPin,
       title: 'Adresse',
-      content: '123 Rue du Design\n75001 Lomé, Togo',
+      content: '123 Rue du Design\n75001 Paris, France',
       link: 'https://maps.google.com',
     },
     {
@@ -82,31 +82,13 @@ export const Contact = () => {
     },
   ];
 
-  const faqItems = [
-    {
-      question: 'Quels sont vos délais de livraison ?',
-      answer: 'Les délais varient selon le type de projet : 1-2 jours pour les cartes de visite, 3-5 jours pour les logos, 5-7 jours pour les projets complexes.',
-    },
-    {
-      question: 'Proposez-vous des révisions ?',
-      answer: 'Oui, nous incluons jusqu\'à 3 révisions dans nos prestations pour garantir votre satisfaction.',
-    },
-    {
-      question: 'Comment se déroule le processus de commande ?',
-      answer: 'Après votre commande, nous assignons un graphiste expert qui travaille avec vous jusqu\'à la livraison finale.',
-    },
-    {
-      question: 'Acceptez-vous les projets urgents ?',
-      answer: 'Oui, nous proposons un service express avec livraison en 24-48h moyennant un supplément.',
-    },
-  ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       {/* Hero */}
       <section className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Contactez-nous</h1>
+          <h1 className="text-4xl mt-20 md:text-5xl font-bold mb-6">Contactez-nous</h1>
           <p className="text-xl text-gray-200">Une question ? Un projet ? Notre équipe est à votre écoute</p>
         </div>
       </section>
@@ -154,7 +136,7 @@ export const Contact = () => {
                       <Input
                         id="phone"
                         type="tel"
-                        placeholder="+228 70 02 55 56"
+                        placeholder="+xx xxx xx xx"
                         value={formData.phone}
                         onChange={(e) => handleChange('phone', e.target.value)}
                       />
@@ -248,19 +230,7 @@ export const Contact = () => {
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>Questions fréquentes</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {faqItems.map((faq, index) => (
-                  <div key={index} className="border-b border-gray-200 pb-4 last:border-b-0 last:pb-0">
-                    <h4 className="font-medium text-gray-900 mb-2">{faq.question}</h4>
-                    <p className="text-sm text-gray-600">{faq.answer}</p>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
+
 
             <Card>
               <CardHeader>
@@ -297,14 +267,14 @@ export const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Notre localisation</h2>
-            <p className="text-gray-600">Visitez nos bureaux au cœur de Lomé</p>
+            <p className="text-gray-600">Visitez nos bureaux au cœur de l'Afrique</p>
           </div>
           <div className="bg-gray-200 rounded-lg h-96 flex items-center justify-center">
             <div className="text-center">
               <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-4" />
               <p className="text-gray-600">
                 Carte interactive disponible<br />
-                123 Rue du Design, 75001 Lomé
+                123 Rue du Design, 75001 Paris
               </p>
             </div>
           </div>

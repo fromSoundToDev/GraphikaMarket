@@ -1,258 +1,209 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
-import { Textarea } from '../components/ui/textarea';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
-import { Label } from '../components/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
-import { Badge } from '../components/ui/badge';
-import { useToast } from '../hooks/use-toast';
-import { Palette, Clock, FileText, Upload, CreditCard } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
+import { Textarea } from "../components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
+import { Checkbox } from "../components/ui/checkbox";
+import { Palette, Upload, CreditCard } from "lucide-react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-const OrderDesign = () => {
-  const [formData, setFormData] = useState({
-    designType: '',
-    title: '',
-    description: '',
-    format: '',
-    deadline: '',
-    budget: '',
-    references: [],
-  });
-  const [loading, setLoading] = useState(false);
-  const { toast } = useToast();
-  const navigate = useNavigate();
+export default function OrderDesign() {
+  const [projectType, setProjectType] = useState("");
+  const [urgency, setUrgency] = useState("normal");
+  const [additionalServices, setAdditionalServices] = useState([]);
 
-  const handleChange = (field, value) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      toast({
-        title: "Commande créée !",
-        description: "Votre demande de design a été envoyée. Un graphiste va bientôt prendre en charge votre projet.",
-      });
-      navigate('/orders');
-    } catch (error) {
-      console.log(error);
-      toast({
-        title: "Erreur",
-        description: "Une erreur s'est produite lors de la création de votre commande.",
-        variant: "destructive",
-      });
-    } finally {
-      setLoading(false);
+  const handleServiceChange = (service, checked) => {
+    if (checked) {
+      setAdditionalServices([...additionalServices, service]);
+    } else {
+      setAdditionalServices(additionalServices.filter(s => s !== service));
     }
   };
 
-  const designTypes = [
-    { value: 'logo', label: 'Logo & Identité visuelle', price: 'À partir de 75 000 CFA' },
-    { value: 'flyer', label: 'Flyer / Dépliant', price: 'À partir de 40 000 CFA' },
-    { value: 'business-card', label: 'Carte de visite', price: 'À partir de 25 000 CFA' },
-    { value: 'poster', label: 'Affiche / Poster', price: 'À partir de 50 000 CFA' },
-    { value: 'packaging', label: 'Packaging', price: 'À partir de 100 000 CFA' },
-    { value: 'web-design', label: 'Design web', price: 'À partir de 150 000 CFA' },
-  ];
+  const calculatePrice = () => {
+    let basePrice = 0;
+    switch (projectType) {
+      case "logo": basePrice = 150; break;
+      case "flyer": basePrice = 80; break;
+      case "brochure": basePrice = 200; break;
+      case "carte-visite": basePrice = 60; break;
+      case "illustration": basePrice = 120; break;
+      default: basePrice = 100;
+    }
+    
+    if (urgency === "urgent") basePrice *= 1.5;
+    if (urgency === "express") basePrice *= 2;
+    
+    const servicesPrice = additionalServices.length * 30;
+    return Math.round(basePrice + servicesPrice);
+  };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-8">
-          <div className="flex items-center mb-4">
-            <Palette className="w-8 h-8 text-purple-600 mr-3" />
-            <h1 className="text-3xl font-bold text-gray-900">Commander un Design</h1>
+    <div className="min-h-screen">
+      <div className="container mx-auto max-w-4xl py-16 px-4">
+        <div className="text-center mb-12">
+          <div className="flex justify-center mb-6">
+            <Palette className="h-16 w-16 text-purple-500" />
           </div>
-          <p className="text-gray-600">
-            Décrivez votre projet et laissez nos graphistes créer le design parfait pour vous
+          <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            Commander votre visuel personnalisé
+          </h1>
+          <p className="text-lg text-gray-600">
+            Décrivez votre projet et obtenez un devis personnalisé
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2">
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="md:col-span-2">
             <Card>
               <CardHeader>
-                <CardTitle>Détails de votre projet</CardTitle>
-                <CardDescription>
-                  Plus vous nous donnez d'informations, meilleur sera le résultat
-                </CardDescription>
+                <CardTitle className="flex items-center gap-2">
+                  <Palette className="h-5 w-5" />
+                  Détails du projet
+                </CardTitle>
               </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="designType">Type de design *</Label>
-                    <Select value={formData.designType} onValueChange={(value) => handleChange('designType', value)}>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Sélectionnez le type de design" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {designTypes.map((type) => (
-                          <SelectItem key={type.value} value={type.value}>
-                            <div className="flex justify-between items-center w-full">
-                              <span>{type.label}</span>
-                              <Badge variant="secondary" className="ml-2">{type.price}</Badge>
-                            </div>
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+              <CardContent className="space-y-6">
+                <div>
+                  <Label htmlFor="project-type">Type de projet</Label>
+                  <Select value={projectType} onValueChange={setProjectType}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Choisissez le type de design" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="logo">Logo d'entreprise</SelectItem>
+                      <SelectItem value="flyer">Flyer publicitaire</SelectItem>
+                      <SelectItem value="brochure">Brochure commerciale</SelectItem>
+                      <SelectItem value="carte-visite">Carte de visite</SelectItem>
+                      <SelectItem value="illustration">Illustration personnalisée</SelectItem>
+                      <SelectItem value="autre">Autre (précisez)</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <Label htmlFor="description">Description détaillée</Label>
+                  <Textarea 
+                    id="description"
+                    placeholder="Décrivez votre projet : style souhaité, couleurs, message à transmettre, utilisation prévue..."
+                    className="min-h-[120px]"
+                  />
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="company">Nom de l'entreprise/marque</Label>
+                    <Input id="company" placeholder="Votre entreprise" />
                   </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="title">Titre du projet *</Label>
-                    <Input
-                      id="title"
-                      placeholder="Ex: Logo pour mon entreprise de restauration"
-                      value={formData.title}
-                      onChange={(e) => handleChange('title', e.target.value)}
-                      required
-                    />
+                  <div>
+                    <Label htmlFor="sector">Secteur d'activité</Label>
+                    <Input id="sector" placeholder="Ex: Restaurant, Tech, Santé..." />
                   </div>
+                </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="description">Description détaillée *</Label>
-                    <Textarea
-                      id="description"
-                      placeholder="Décrivez votre projet : style souhaité, couleurs, message, public cible..."
-                      value={formData.description}
-                      onChange={(e) => handleChange('description', e.target.value)}
-                      rows={5}
-                      required
-                    />
+                <div>
+                  <Label htmlFor="references">Références visuelles</Label>
+                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+                    <Upload className="mx-auto h-8 w-8 text-gray-400 mb-2" />
+                    <p className="text-sm text-gray-600 mb-2">
+                      Uploadez des images d'inspiration (optionnel)
+                    </p>
+                    <Button variant="outline" size="sm">
+                      <Upload className="mr-2 h-4 w-4" />
+                      Choisir des fichiers
+                    </Button>
                   </div>
+                </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="format">Format souhaité</Label>
-                      <Select value={formData.format} onValueChange={(value) => handleChange('format', value)}>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Sélectionnez le format" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="digital">Numérique uniquement</SelectItem>
-                          <SelectItem value="print">Pour impression</SelectItem>
-                          <SelectItem value="both">Numérique + Impression</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
+                <div>
+                  <Label>Délai souhaité</Label>
+                  <Select value={urgency} onValueChange={setUrgency}>
+                    <SelectTrigger>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="normal">Standard (7-10 jours)</SelectItem>
+                      <SelectItem value="urgent">Urgent (3-5 jours) +50%</SelectItem>
+                      <SelectItem value="express">Express (24-48h) +100%</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="deadline">Délai souhaité</Label>
-                      <Select value={formData.deadline} onValueChange={(value) => handleChange('deadline', value)}>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Sélectionnez le délai" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="1-day">Express (24h) +50%</SelectItem>
-                          <SelectItem value="2-3-days">2-3 jours</SelectItem>
-                          <SelectItem value="1-week">1 semaine</SelectItem>
-                          <SelectItem value="2-weeks">2 semaines</SelectItem>
-                          <SelectItem value="flexible">Flexible</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
+                <div>
+                  <Label>Services additionnels</Label>
+                  <div className="space-y-3 mt-3">
+                    {[
+                      { id: "formats", label: "Formats multiples (web, print, réseaux sociaux)" },
+                      { id: "variations", label: "3 variations de couleurs" },
+                      { id: "mockups", label: "Mockups de présentation" },
+                      { id: "charte", label: "Mini charte graphique" }
+                    ].map((service) => (
+                      <div key={service.id} className="flex items-center space-x-2">
+                        <Checkbox 
+                          id={service.id}
+                          checked={additionalServices.includes(service.id)}
+                          onCheckedChange={(checked) => 
+                            handleServiceChange(service.id, checked)
+                          }
+                        />
+                        <Label htmlFor={service.id} className="text-sm">
+                          {service.label} <span className="text-gray-500">(+30€)</span>
+                        </Label>
+                      </div>
+                    ))}
                   </div>
-
-                  <div className="space-y-2">
-                    <Label>Références et inspirations (optionnel)</Label>
-                    <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
-                      <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
-                      <p className="text-sm text-gray-600 mb-2">
-                        Uploadez des images d'inspiration ou des références
-                      </p>
-                      <p className="text-xs text-gray-500">JPG, PNG - Max 5MB par fichier</p>
-                      <Button type="button" variant="outline" className="mt-3">
-                        Sélectionner des fichiers
-                      </Button>
-                    </div>
-                  </div>
-
-                  <Button type="submit" className="w-full" disabled={loading}>
-                    {loading ? 'Création en cours...' : 'Créer ma commande'}
-                  </Button>
-                </form>
+                </div>
               </CardContent>
             </Card>
           </div>
 
-          <div className="space-y-6">
-            <Card>
+          <div>
+            <Card className="sticky top-8">
               <CardHeader>
-                <CardTitle className="flex items-center">
-                  <FileText className="w-5 h-5 mr-2" />
-                  Résumé
-                </CardTitle>
+                <CardTitle>Récapitulatif</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="flex justify-between">
-                  <span>Type de design:</span>
-                  <span className="font-medium">
-                    {formData.designType ? 
-                      designTypes.find(t => t.value === formData.designType)?.label 
-                      : 'Non sélectionné'}
-                  </span>
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <span>Type de projet:</span>
+                    <span className="font-medium">
+                      {projectType ? projectType.charAt(0).toUpperCase() + projectType.slice(1) : "-"}
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Délai:</span>
+                    <span className="font-medium">
+                      {urgency === "normal" ? "Standard" : 
+                       urgency === "urgent" ? "Urgent" : "Express"}
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Services additionnels:</span>
+                    <span className="font-medium">{additionalServices.length}</span>
+                  </div>
                 </div>
-                <div className="flex justify-between">
-                  <span>Format:</span>
-                  <span className="font-medium">{formData.format || 'Non spécifié'}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Délai:</span>
-                  <span className="font-medium">{formData.deadline || 'Non spécifié'}</span>
-                </div>
-                <hr />
-                <div className="flex justify-between text-lg font-bold">
-                  <span>Prix estimé:</span>
-                  <span className="text-purple-600">
-                    {formData.designType ? 
-                      designTypes.find(t => t.value === formData.designType)?.price 
-                      : 'À définir'}
-                  </span>
-                </div>
-              </CardContent>
-            </Card>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Clock className="w-5 h-5 mr-2" />
-                  Processus
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3 text-sm">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-purple-600 rounded-full mr-3"></div>
-                  <span>Commande créée</span>
+                <div className="border-t pt-4">
+                  <div className="flex justify-between text-lg font-bold">
+                    <span>Total estimé:</span>
+                    <span className="text-purple-600">{calculatePrice()}€</span>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-1">
+                    Prix final confirmé après validation du brief
+                  </p>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-gray-300 rounded-full mr-3"></div>
-                  <span>Attribution à un graphiste</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-gray-300 rounded-full mr-3"></div>
-                  <span>Création et révisions</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-gray-300 rounded-full mr-3"></div>
-                  <span>Livraison finale</span>
-                </div>
-              </CardContent>
-            </Card>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <CreditCard className="w-5 h-5 mr-2" />
-                  Paiement
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-gray-600">
-                <p>Le paiement sera effectué après validation du devis personnalisé par notre équipe.</p>
+                <Link to="/payment">
+                  <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600" size="lg">
+                    <CreditCard className="mr-2 h-4 w-4" />
+                    Procéder au paiement
+                  </Button>
+                </Link>
+
+                <p className="text-xs text-center text-gray-500">
+                  Paiement sécurisé • Satisfaction garantie
+                </p>
               </CardContent>
             </Card>
           </div>
@@ -260,6 +211,4 @@ const OrderDesign = () => {
       </div>
     </div>
   );
-};
-
-export default OrderDesign;
+}

@@ -219,7 +219,7 @@ const Help = () => {
                   Réponse immédiate<br />7j/7 - 8h à 20h
                 </p>
                 <Button variant="outline" className="w-full text-xs">
-                  +228 70 02 55 56
+                  +xx xxx xx xx
                 </Button>
               </div>
 
@@ -232,7 +232,7 @@ const Help = () => {
                   Réponse sous 4h<br />Lun-Sam 8h-18h
                 </p>
                 <Button variant="outline" className="w-full text-xs">
-                  aide@graphika.tg
+                  aide@graphika.com
                 </Button>
               </div>
 
@@ -245,7 +245,7 @@ const Help = () => {
                   Support prioritaire<br />Lun-Ven 8h-17h
                 </p>
                 <Button variant="outline" className="w-full text-xs">
-                  +228 70 02 55 56
+                  +xx xxx xx xx
                 </Button>
               </div>
 
