@@ -90,7 +90,7 @@ function Layout({ children }) {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-gray-50 fixed min-w-full shadow-sm border-b">
+      <header className="bg-gray-50 fixed z-50 min-w-full shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between  h-16">
             <div className="flex items-center ml-4">
@@ -162,25 +162,21 @@ function Layout({ children }) {
                       <span>{link.label}</span>
                     </Link>
                   ))}
-                  <Button variant="outline" onClick={handleLogout}>
-                    <LogOut className="w-4 h-4 mr-2" />
-                    Déconnexion
-                  </Button>
                 </>
               )}
             </nav>
 
             {/* Mobile menu button */}
-            <div className="md:hidden">
+            <div className="md:hidden my-auto">
               <Button
                 variant="ghost"
-                size="sm"
+                size="md"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
                 {mobileMenuOpen ? (
-                  <X className="w-5 h-5" />
+                  <X className="w-24 h-24" />
                 ) : (
-                  <Menu className="w-5 h-5" />
+                  <Menu className="w-24 h-24" />
                 )}
               </Button>
             </div>
@@ -261,7 +257,7 @@ function Layout({ children }) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 bg-gray-200">{children}</main>
+      <main className="flex-1 relative z-0 bg-gray-200">{children}</main>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white">
