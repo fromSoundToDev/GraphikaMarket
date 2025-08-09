@@ -1,13 +1,8 @@
+import { Link } from 'react-router-dom';
 import { Button } from "../components/ui/button";
 import { Badge } from "../components/ui/badge";
-import {
-  Palette,
-  Users,
-  TrendingUp,
-  Clock,
-  Star,
-  Euro,
-} from "lucide-react";
+import { Card, CardContent , CardFooter, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
+import { Palette, Users, TrendingUp, Clock, Star, Euro } from "lucide-react";
 
 export const BecomeGraphiste = () => {
   const benefits = [
@@ -175,19 +170,21 @@ export const BecomeGraphiste = () => {
       </section>
 
       {/* Application Form */}
-      <section>
-        <p className="text-lg text-gray-600 mb-8">
-          Rejoignez notre équipe ! Remplissez le formulaire pour proposer vos
-          services sur la plateforme.
-        </p>
-        <Link to="/apply-graphist">
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700"
-          >
-            S'inscrire comme graphiste
-          </Button>
-        </Link>
+      <section className="py-16 px-4 text-center">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 mb-8">
+            Rejoignez notre équipe ! Remplissez le formulaire pour proposer vos
+            services sur la plateforme.
+          </p>
+          <Link to="/apply-graphist">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700"
+            >
+              S'inscrire comme graphiste
+            </Button>
+          </Link>
+        </div>
       </section>
     </div>
   );

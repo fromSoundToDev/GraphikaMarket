@@ -1,4 +1,9 @@
-import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
@@ -9,15 +14,12 @@ export default function ApplyGraphist() {
   return (
     <div className="min-h-screen">
       <div className="container mx-auto max-w-2xl py-16 px-4">
-        <h1 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 bg-clip-text text-transparent">
-          Devenir graphiste partenaire
-        </h1>
-
-        <Card>
+        <Card className="mt-20">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <UserPlus className="h-6 w-6" />
-              Candidature graphiste
+              <h1 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 bg-clip-text text-transparent">
+                Devenir graphiste partenaire
+              </h1>
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -45,8 +47,8 @@ export default function ApplyGraphist() {
 
               <div>
                 <Label htmlFor="experience">Expérience professionnelle</Label>
-                <Textarea 
-                  id="experience" 
+                <Textarea
+                  id="experience"
                   placeholder="Décrivez votre expérience en design graphique..."
                   className="min-h-[100px]"
                 />
@@ -54,8 +56,8 @@ export default function ApplyGraphist() {
 
               <div>
                 <Label htmlFor="specialties">Spécialités</Label>
-                <Textarea 
-                  id="specialties" 
+                <Textarea
+                  id="specialties"
                   placeholder="Logo, web design, print, illustration..."
                   className="min-h-[80px]"
                 />
@@ -66,7 +68,10 @@ export default function ApplyGraphist() {
                 <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
                   <Upload className="mx-auto h-8 w-8 text-gray-400 mb-2" />
                   <Input id="cv" type="file" accept=".pdf" className="hidden" />
-                  <Label htmlFor="cv" className="cursor-pointer text-purple-600 hover:text-purple-500">
+                  <Label
+                    htmlFor="cv"
+                    className="cursor-pointer text-purple-600 hover:text-purple-500"
+                  >
                     Cliquer pour uploader votre CV
                   </Label>
                 </div>
