@@ -82,7 +82,7 @@ export default function AllDesigns() {
     <div className="min-h-screen">
       
       <div className="container mx-auto px-4 py-8">
-        <div className="mb-8 text-center">
+        <div className="mb-8 mt-24 text-center">
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 bg-clip-text text-transparent">
             Nos Designs
           </h1>

@@ -14,7 +14,7 @@ export default function OrderTracking() {
   return (
     <div className="min-h-screen">
       <div className="container mx-auto max-w-4xl py-16 px-4">
-        <h1 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <h1 className="text-3xl mt-20 font-bold mb-8 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
           Suivi de commande #CMD001
         </h1>
 

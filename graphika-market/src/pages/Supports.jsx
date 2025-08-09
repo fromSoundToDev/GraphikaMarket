@@ -108,7 +108,7 @@ const Supports = () => {
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-transparent">
         <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="text-center max-w-4xl mx-auto">
+          <div className="text-center mt-20 max-w-4xl mx-auto">
             <div className="flex items-center justify-center mb-6">
               <div className="p-4 bg-primary/10 rounded-2xl backdrop-blur-sm border border-primary/20">
                 <Package className="w-10 h-10 text-primary" />
