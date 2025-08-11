@@ -193,7 +193,6 @@ export default function PrintOrder() {
                   <Button 
                     className="w-full bg-gradient-to-r from-purple-600 to-pink-600" 
                     size="lg"
-                    disabled={!uploadedFile || !format}
                   >
                     <CreditCard className="mr-2 h-4 w-4" />
                     Procéder au paiement

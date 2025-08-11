@@ -110,18 +110,18 @@ const Supports = () => {
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="text-center mt-20 max-w-4xl mx-auto">
             <div className="flex items-center justify-center mb-6">
-              <div className="p-4 bg-primary/10 rounded-2xl backdrop-blur-sm border border-primary/20">
+              <div className="p-4 bg-primary/10 rounded-2xl bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 bg-clip-text text-transparent border border-primary/20">
                 <Package className="w-10 h-10 text-primary" />
               </div>
             </div>
-            <h1 className="text-5xl font-bold text-foreground mb-4 tracking-tight">
-              Supports <span className="text-primary">Variés</span>
+            <h1 className="h-14 text-5xl font-bold  bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 bg-clip-text text-transparent  mb-4 ">
+              Supports <span >Variés</span>
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-              Découvrez notre gamme complète de supports de conception graphique et d'impression professionnelle
+            <p className="text-xl font-bold text-primary leading-relaxed mb-8">
+              Notre gamme complète de supports de conception graphique et d'impression professionnelle
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+              <Button asChild size="lg" className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 hover:bg-primary/90">
                 <Link to="/conception">
                   <Palette className="w-4 h-4 mr-2" />
                   Commander une conception
@@ -139,6 +139,8 @@ const Supports = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 pb-16 -mt-8">
+
+        
         {/* Supports de Conception */}
         <section className="mb-16 mt-12">
           <div className="text-center mb-12">
@@ -164,7 +166,7 @@ const Supports = () => {
                   {category.items.map((item, itemIndex) => (
                     <Card key={itemIndex} className="border-0 shadow-lg bg-card/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300">
                       <CardHeader>
-                        <CardTitle className="text-lg">{item.name}</CardTitle>
+                        <CardTitle className="text-lg bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 bg-clip-text text-transparent">{item.name}</CardTitle>
                         <div className="flex items-center space-x-2">
                           <Badge variant="secondary" className="bg-primary/10 text-primary">
                             {item.price}
@@ -175,7 +177,7 @@ const Supports = () => {
                         <ul className="space-y-2">
                           {item.features.map((feature, featureIndex) => (
                             <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
-                              <CheckCircle className="w-4 h-4 text-primary mr-2 flex-shrink-0" />
+                              <CheckCircle className="w-4 h-4  text-green-500 mr-2 flex-shrink-0" />
                               {feature}
                             </li>
                           ))}
@@ -210,11 +212,11 @@ const Supports = () => {
                   <h3 className="text-2xl font-semibold text-foreground">{category.category}</h3>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {category.items.map((item, itemIndex) => (
-                    <Card key={itemIndex} className="border-0 shadow-lg bg-card/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300">
+                    <Card key={itemIndex} className="border-0 shadow-lg bg-card/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 ">
                       <CardHeader>
-                        <CardTitle className="text-lg">{item.name}</CardTitle>
+                        <CardTitle className="text-lg bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 bg-clip-text text-transparent">{item.name}</CardTitle>
                         <div className="flex items-center space-x-2">
                           <Badge variant="outline" className="border-secondary/30 text-secondary-foreground">
                             {item.price}
@@ -225,7 +227,7 @@ const Supports = () => {
                         <ul className="space-y-2">
                           {item.materials.map((material, materialIndex) => (
                             <li key={materialIndex} className="flex items-center text-sm text-muted-foreground">
-                              <CheckCircle className="w-4 h-4 text-secondary-foreground mr-2 flex-shrink-0" />
+                              <CheckCircle className="w-4 h-4  text-green-500 mr-2 flex-shrink-0" />
                               {material}
                             </li>
                           ))}
@@ -243,14 +245,14 @@ const Supports = () => {
         <section className="mt-16 text-center">
           <Card className="border-0 shadow-xl bg-gradient-to-r from-primary/10 to-secondary/10 backdrop-blur-sm">
             <CardContent className="py-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 bg-clip-text text-transparent mb-4">
                 Prêt à démarrer votre projet ?
               </h2>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
                 Contactez-nous pour discuter de vos besoins spécifiques ou obtenez un devis personnalisé
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+                <Button asChild size="lg" className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 hover:bg-primary/90">
                   <Link to="/conception">
                     Demander une conception
                     <ArrowRight className="w-4 h-4 ml-2" />

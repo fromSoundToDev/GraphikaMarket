@@ -84,7 +84,7 @@ export default function AllDesigns() {
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8 mt-24 text-center">
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 bg-clip-text text-transparent">
-            Nos Designs
+            NOS DESIGNS
           </h1>
           <p className="text-gray-600 text-lg">Découvrez notre collection complète de créations graphiques</p>
         </div>

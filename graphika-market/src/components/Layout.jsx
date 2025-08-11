@@ -108,30 +108,53 @@ function Layout({ children }) {
             <nav className="hidden md:flex items-center space-x-8 mr-4">
               {!user ? (
                 <>
-                  <Link to="/" className="text-gray-600 hover:">
+                  <Link
+                    to="/"
+                    className={`text-gray-600 hover:text-purple-900 ${
+                      location.pathname === "/"
+                        ? "font-semibold border-b-2 text-purple-700"
+                        : ""
+                    }`}
+                  >
                     Accueil
                   </Link>
                   <Link
                     to="/conception"
-                    className="text-gray-600 hover:text-gray-900"
+                    className={`text-gray-600 hover:text-purple-900 ${
+                      location.pathname === "/conception"
+                        ? "font-semibold border-b-2 text-purple-700"
+                        : ""
+                    }`}
                   >
                     Conception
                   </Link>
                   <Link
                     to="/impressions"
-                    className="text-gray-600 hover:text-gray-900"
+                    className={`text-gray-600 hover:text-purple-900 ${
+                      location.pathname === "/impressions"
+                        ? "font-semibold border-b-2 text-purple-700"
+                        : ""
+                    }`}
                   >
                     Impression
                   </Link>
                   <Link
                     to="/become-graphiste"
-                    className="text-gray-600 hover:text-gray-900"
+                    className={`text-gray-600 hover:text-purple-900 ${
+                      location.pathname === "/become-graphiste"
+                        ? "font-semibold border-b-2 text-purple-700"
+                        : ""
+                    }`}
                   >
                     Devenir Graphiste
                   </Link>
                   <Link
                     to="/contact"
-                    className="text-gray-600 hover:text-gray-900"
+                    className={`text-gray-600 hover:text-purple-900 ${
+                      location.pathname === "/contact"
+                        ? "font-semibold border-b-2 text-purple-700"
+                        : ""
+                    }`}
                   >
                     Contact
                   </Link>
@@ -141,7 +164,7 @@ function Layout({ children }) {
                         Se connecter
                       </Button>
                     </Link>
-                    <Link to="/register" >
+                    <Link to="/register">
                       <Button className="mr-2">S'inscrire</Button>
                     </Link>
                   </div>
