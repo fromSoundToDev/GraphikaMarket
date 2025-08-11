@@ -43,8 +43,8 @@ export default function OrderDesign() {
   return (
     <div className="min-h-screen">
       <div className="container mx-auto max-w-4xl py-16 px-4">
-        <div className="text-center mb-12">
-          <div className="flex justify-center mb-6">
+        <div className="text-center mt-20 mb-12">
+          <div className="flex justify-center mb-12">
             <Palette className="h-16 w-16 text-purple-500" />
           </div>
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">

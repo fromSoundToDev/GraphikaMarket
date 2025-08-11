@@ -42,11 +42,11 @@ export default function PrintOrder() {
   return (
     <div className="min-h-screen">
       <div className="container mx-auto max-w-4xl py-16 px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mt-20 mb-12">
           <div className="flex justify-center mb-6">
-            <Printer className="h-16 w-16 text-orange-500" />
+            <Printer className="h-16 w-16  text-purple-500" />
           </div>
-          <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
             Commander une impression
           </h1>
           <p className="text-lg text-gray-600">
@@ -64,12 +64,12 @@ export default function PrintOrder() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div>
+                <div type="file">
                   <Label htmlFor="file-upload">Fichier à imprimer</Label>
                   <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
                     <Upload className="mx-auto h-8 w-8 text-gray-400 mb-2" />
                     <Label htmlFor="file-upload" className="cursor-pointer">
-                      <span className="text-orange-600 font-medium">
+                      <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text font-medium">
                         Choisir un fichier à imprimer
                       </span>
                       <Input
@@ -185,13 +185,13 @@ export default function PrintOrder() {
                 <div className="border-t pt-4">
                   <div className="flex justify-between text-lg font-bold">
                     <span>Total:</span>
-                    <span className="text-orange-600">{calculatePrice()}€</span>
+                    <span className="text-purple-600">{calculatePrice()}€</span>
                   </div>
                 </div>
 
                 <Link to="/payment">
                   <Button 
-                    className="w-full bg-gradient-to-r from-orange-600 to-red-600" 
+                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600" 
                     size="lg"
                     disabled={!uploadedFile || !format}
                   >

@@ -108,7 +108,7 @@ function Layout({ children }) {
             <nav className="hidden md:flex items-center space-x-8 mr-4">
               {!user ? (
                 <>
-                  <Link to="/" className="text-gray-600 hover:text-gray-900">
+                  <Link to="/" className="text-gray-600 hover:">
                     Accueil
                   </Link>
                   <Link

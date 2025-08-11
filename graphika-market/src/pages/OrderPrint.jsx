@@ -64,10 +64,10 @@ const OrderPrint = () => {
   };
 
   return (
-    <div className="min-h-screen p-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-8">
-          <div className="flex items-center mb-4">
+    <div className="min-h-screen mb-20">
+      <div className="container mx-auto max-w-4xl py-16 px-4">
+        <div className= "text-center mb-12">
+          <div className="flex justify-center mb-6">
             <Camera className="w-8 h-8 text-green-600 mr-3" />
             <h1 className="text-3xl font-bold text-gray-900">Commander une Impression</h1>
           </div>

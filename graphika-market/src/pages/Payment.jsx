@@ -21,10 +21,10 @@ export default function Payment() {
   return (
     <div className="min-h-screen">
       <div className="container mx-auto max-w-2xl py-16 px-4">
-        <Card>
+        <Card className="mt-20">
           <CardHeader className="text-center">
             <CardTitle className="flex items-center justify-center gap-2 text-2xl">
-              <CreditCard className="h-6 w-6 text-green-600" />
+              <CreditCard className="h-6 w-6 text-purple-600" />
               Paiement sécurisé
             </CardTitle>
           </CardHeader>
@@ -77,7 +77,7 @@ export default function Payment() {
 
               <Button
                 type="submit"
-                className="w-full bg-gradient-to-r from-green-600 to-blue-600 text-white"
+                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white"
                 disabled={isProcessing}
               >
                 <Lock className="mr-2 h-4 w-4" />
