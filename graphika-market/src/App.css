@@ -1,9 +1,0 @@
-:root {
-  --background: 0 0% 100%; /* blanc */
-  --foreground: 0 0% 0%;   /* noir */
-}
-
-.dark {
-  --background: 0 0% 0%;   /* noir */
-  --foreground: 0 0% 100%; /* blanc */
-}

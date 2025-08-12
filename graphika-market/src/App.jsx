@@ -40,7 +40,6 @@ import AllDesigns from "./pages/AllDesigns";
 import ApplyGraphist from "./pages/ApplyGraphist";
 import DownloadPage from "./pages/Download";
 import UploadPage from "./pages/Upload";
-import ThemeProvider from './ThemeProvider';
 
 const queryClient = new QueryClient();
 
