@@ -35,7 +35,7 @@ const graphisteMenuItems = [
   },
 ];
 
-export function AdminSidebar() {
+export function GraphisteSidebar() {
   const { logout } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();

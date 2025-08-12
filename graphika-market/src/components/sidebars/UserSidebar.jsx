@@ -47,7 +47,7 @@ const userMenuItems = [
   },
 ];
 
-export function AdminSidebar() {
+export function UserSidebar() {
   const { logout } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
