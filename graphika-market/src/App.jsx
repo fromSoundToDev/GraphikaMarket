@@ -2,7 +2,7 @@ import { Toaster } from "./components/ui/toaster";
 import { Toaster as Sonner } from "./components/ui/sonner";
 import { TooltipProvider } from "./components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./components/Layout";
 import DashboardLayout from "./components/DashboardLayout";
 import Home from "./pages/Home";
@@ -40,15 +40,25 @@ import AllDesigns from "./pages/AllDesigns";
 import ApplyGraphist from "./pages/ApplyGraphist";
 import DownloadPage from "./pages/Download";
 import UploadPage from "./pages/Upload";
+import { useState, useEffect } from "react";
+import Loading from "./components/Loading";
 
 const queryClient = new QueryClient();
 
-export const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
+
+function AppContent() {
+  const location = useLocation();
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => setLoading(false), 500); // Ajuste durée transition
+    return () => clearTimeout(timer);
+  }, [location]);
+
+  return (
+    <>
+      {loading && <Loading />}
           <Routes>
             {/* Public Routes with Layout */}
             <Route path="/" element={<Layout><Home /></Layout>} />
@@ -98,6 +108,19 @@ export const App = () => (
             
             <Route path="*" element={<Layout><NotFound /></Layout>} />
           </Routes>
+    </>
+  );
+}
+
+export const App = () => (
+
+
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <AppContent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
