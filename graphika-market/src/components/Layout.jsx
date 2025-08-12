@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/button";
+import ThemeToggle from "../components/ThemeToggleButton";
 import { useAuth } from "../contexts/AuthContext";
 import {
   Menu,
@@ -88,7 +89,7 @@ function Layout({ children }) {
   const navLinks = getNavLinks();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen dark:bg-black dark:text-white transition-colors duration-300">
       {/* Header */}
       <header className="bg-gray-50 fixed z-50 min-w-full shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -187,7 +188,12 @@ function Layout({ children }) {
                   ))}
                 </>
               )}
+              
+            <ThemeToggle />
+
             </nav>
+
+            
 
             {/* Mobile menu button */}
             <div className="md:hidden my-auto">
@@ -280,7 +286,7 @@ function Layout({ children }) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 relative z-0 bg-gray-200">{children}</main>
+      <main className="flex-1 relative z-0 bg-gray-400 dark:bg-black">{children}</main>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white">

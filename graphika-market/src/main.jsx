@@ -4,6 +4,7 @@ import "./index.css";
 import "./App.css";
 import { AuthProvider } from "./contexts/AuthContext";
 
+
 const rootElement = document.getElementById("root");
 if (rootElement) {
   createRoot(rootElement).render(
