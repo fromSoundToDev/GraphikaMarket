@@ -17,8 +17,8 @@ export default function UploadPage() {
 
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto max-w-2xl py-16 px-4">
-        <h1 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+      <div className="container  mx-auto max-w-2xl py-16 px-4">
+        <h1 className="text-3xl mt-20 font-bold mb-8 text-center bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
           Upload de fichier
         </h1>
 

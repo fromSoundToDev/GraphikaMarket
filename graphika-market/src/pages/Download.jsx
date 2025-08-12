@@ -12,7 +12,7 @@ export default function DownloadPage() {
   return (
     <div className="min-h-screen">
       <div className="container mx-auto max-w-4xl py-16 px-4">
-        <h1 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+        <h1 className="text-3xl mt-20 font-bold mb-8 text-center bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
           Téléchargements disponibles
         </h1>
 
