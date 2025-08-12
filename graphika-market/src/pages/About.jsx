@@ -67,9 +67,9 @@ const About = () => {
 
       {/* Hero Section */}
       <section className="py-20 px-4 text-center">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Notre Histoire
+        <div className="max-w-7xl mt-20 mx-auto">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            NOTRE HISTOIRE
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-8">
             Graphika est né de la passion pour la création graphique et de la volonté de connecter les talents avec ceux qui en ont besoin.
@@ -89,7 +89,7 @@ const About = () => {
               <p className="text-lg text-gray-600 mb-8">
                 Nous croyons que chaque projet mérite un design unique et professionnel, quel que soit le budget. C'est pourquoi nous avons créé un écosystème où la créativité rencontre l'accessibilité.
               </p>
-              <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
+              <Button className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700">
                 Rejoindre la communauté
               </Button>
             </div>
@@ -180,7 +180,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 text-center bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600">
+      <section className="py-20 px-4 text-center bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             Prêt à Rejoindre l'Aventure ?
