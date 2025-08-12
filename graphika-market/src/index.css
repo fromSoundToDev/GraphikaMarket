@@ -3,25 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-html.dark {
-  filter: invert(1) hue-rotate(180deg);
-}
 
-html.dark img,
-html.dark video,
-html.dark svg {
-  filter: invert(1) hue-rotate(180deg);
-}
-
-html.dark-invert {
-  filter: invert(1) hue-rotate(180deg);
-}
-
-html.dark-invert img,
-html.dark-invert video,
-html.dark-invert iframe {
-  filter: invert(1) hue-rotate(180deg);
-}
 
 
 @layer base {
