@@ -189,14 +189,11 @@ function Layout({ children }) {
                 </>
               )}
 
-            <ThemeToggle />
-
+              <ThemeToggle />
             </nav>
 
-            
-
             {/* Mobile menu button */}
-            <div className="md:hidden my-auto">
+            <div className="md:hidden flex gap-3 my-auto">
               <Button
                 variant="ghost"
                 size="md"
@@ -208,6 +205,8 @@ function Layout({ children }) {
                   <Menu className="w-24 h-24" />
                 )}
               </Button>
+
+              <ThemeToggle />
             </div>
           </div>
         </div>
