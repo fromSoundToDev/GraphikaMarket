@@ -71,7 +71,7 @@ export function AdminSidebar() {
         </div>
       </SidebarHeader>
 
-      <SidebarContent>
+      <SidebarContent >
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
@@ -82,8 +82,8 @@ export function AdminSidebar() {
                     isActive={location.pathname === item.url}
                   >
                     <Link to={item.url} className="text-white">
-                      <item.icon />
-                      <span>{item.title}</span>
+                      <item.icon className="w-4 h-4"/>
+                      <span className="font-semibold size-lg">{item.title}</span>
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>

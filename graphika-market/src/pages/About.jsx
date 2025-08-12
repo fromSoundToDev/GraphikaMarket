@@ -186,13 +186,13 @@ const About = () => {
             Prêt à Rejoindre l'Aventure ?
           </h2>
           <p className="text-xl text-purple-100 mb-8">
-            Que vous soyez créateur ou client, DesignMarket vous attend pour donner vie à vos projets les plus ambitieux.
+            Que vous soyez créateur ou client, Graphika vous attend pour donner vie à vos projets les plus ambitieux.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-purple-600 hover:bg-purple-50">
               Commencer à vendre
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-600">
+            <Button size="lg" variant="outline" className="border-white text-black hover:bg-white hover:text-purple-600">
               Explorer les designs
             </Button>
           </div>
