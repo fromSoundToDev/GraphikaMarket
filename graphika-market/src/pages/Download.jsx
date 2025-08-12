@@ -12,7 +12,7 @@ export default function DownloadPage() {
   return (
     <div className="min-h-screen">
       <div className="container mx-auto max-w-4xl py-16 px-4">
-        <h1 className="text-3xl mt-20 font-bold mb-8 text-center bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+        <h1 className="text-3xl mt-20 font-bold mb-8 text-center bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
           Téléchargements disponibles
         </h1>
 
@@ -28,7 +28,7 @@ export default function DownloadPage() {
               {downloadableFiles.map((file) => (
                 <div key={file.id} className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50">
                   <div className="flex items-center gap-3">
-                    <file.icon className="h-8 w-8 text-blue-600" />
+                    <file.icon className="h-8 w-8 text-pink-600" />
                     <div>
                       <h3 className="font-semibold">{file.name}</h3>
                       <p className="text-sm text-gray-600">{file.type} • {file.size}</p>
@@ -43,7 +43,7 @@ export default function DownloadPage() {
             </div>
             
             <div className="mt-6 pt-6 border-t">
-              <Button className="w-full bg-gradient-to-r from-green-600 to-blue-600">
+              <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600">
                 <Download className="mr-2 h-4 w-4" />
                 Télécharger tout (Archive ZIP)
               </Button>
