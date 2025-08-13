@@ -52,7 +52,7 @@ function AppContent() {
 
   useEffect(() => {
     setLoading(true);
-    const timer = setTimeout(() => setLoading(false), 500); // Ajuste durée transition
+    const timer = setTimeout(() => setLoading(false), 4000);
     return () => clearTimeout(timer);
   }, [location]);
 

@@ -17,3 +17,7 @@ html.dark-invert video,
 html.dark-invert iframe {
   filter: invert(1) hue-rotate(180deg);
 }
+
+html.dark-invert footer {
+  filter: invert(1) hue-rotate(180deg); 
+}
