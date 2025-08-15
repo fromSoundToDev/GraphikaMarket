@@ -148,7 +148,7 @@ const services = [
       <section className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center mt-20 mb-4">
-            <Badge className="bg-yellow-100 text-purple-900 text-sm font-semibold px-4 py-2">
+            <Badge className="bg-yellow-100 text-purple-900 mb-10 text-sm font-semibold px-4 py-2">
               🎉 1ère Plateforme graphique d'Afrique
             </Badge>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
