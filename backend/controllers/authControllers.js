@@ -3,6 +3,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
 export const register = async (req, res, next) => {
+  
   try {
     const { name, email, password, role } = req.body;
     let user = await User.findOne({ email });
